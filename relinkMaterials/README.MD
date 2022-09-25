@@ -1,7 +1,7 @@
 # Relink Missing Material Paths Tool
 Relocating missing textures manually might become time consuming for big scenes and in many cases moving files in working directory can't be fully avoided. 
 
-![image](missingPaths.png)
+![missingPaths](https://user-images.githubusercontent.com/44114036/192157654-83b61e5f-90e9-4db1-b897-105ef378a759.png)
 
 This tool is created to handle task to relocate missing texture images with branching subfolders. It is important to give as direct path location as possible otherwise relocating process might become computing-heavy.
 
