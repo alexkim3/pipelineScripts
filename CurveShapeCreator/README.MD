@@ -12,7 +12,7 @@ The reason why the code is creating a next code as a sub-step is to create a sha
 
 It is important to have no more parent levels than 1 (1st level of children), to have EP or CV curves selected (doesn't work for bezier curves) and to not have namespaces in the applied curve.
 
-![alt text](curveCreator_demo.gif "Curve Generator Demo")
+https://user-images.githubusercontent.com/44114036/192155535-d413363e-c6f1-4136-b324-0adddc42ea14.mov
 
 ## Guides
 
@@ -20,3 +20,6 @@ It is important to have no more parent levels than 1 (1st level of children), to
 2. Run the script shapeCreator.py
 3. Select the generated code
 4. Add the code to your shape library or run the generated code to duplicate the curve directly
+
+
+
