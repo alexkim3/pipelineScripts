@@ -279,8 +279,8 @@ class Randomizer():
         height = 470
         randWindow = cmds.window('randomizer_Window', title='Randomizer', closeCommand=self.killAllEventsAndReset, resizeToFitChildren=True)
         mainWindow = cmds.formLayout(numberOfDivisions=100, parent=randWindow, width=width, height=height)
-        titleImg = cmds.image(image="C:/Users/alexandrakimbui/Desktop/images/randLogo.png", parent=mainWindow)
-        attribsImg = cmds.image(image="C:/Users/alexandrakimbui/Desktop/images/randAttribsImage.png", parent=mainWindow)
+        titleImg = cmds.image(image="icons/randLogo.png", parent=mainWindow)
+        attribsImg = cmds.image(image="icons/randAttribsImage.png", parent=mainWindow)
         instructions = cmds.text( label='- Select geo/s', align='left', font='obliqueLabelFont', parent=mainWindow )
         instructions2 = cmds.text( label='- Select channel/s', align='left', font='obliqueLabelFont', parent=mainWindow )
         instructions3 = cmds.text( label='- Choose randomize operations', align='left', font='obliqueLabelFont', parent=mainWindow )
