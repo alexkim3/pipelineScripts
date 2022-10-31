@@ -1,6 +1,6 @@
 # Introduction
 Hello and welcome to my GitHub repository! My name is Alexandra Kim Bui and I'm a developer focused od building UIs and fuctional and pipeline tools 
-for artists and animators. Currently I'm working in NVIZ studio as a Junior Pipeline Technical Director. 
+for artists and animators. 
 Here you can find my up-to-date projects which I have been working on. The projects are made for Autodesk Maya, using Python 
 and PyQt. Here is a brief summary of the projects, for more detailed information about a project please visit the assigned folder.
 
