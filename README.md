@@ -12,6 +12,7 @@ For any aditional information you can contact me at alex.kim@email.cz or Linked-
 
 Randomizer currently provides a possibilty to randomize main channels (translation, rotation and scale) for a large amount of objects. 
 Using randomizer provides a realtime change reflection so its possible to have a quick overview and absolute control of the randomized result.
+This tool was developed in my free time, so I might be still improving some parts in the future.
 
 https://user-images.githubusercontent.com/44114036/196045130-96e3b30c-0d40-4ff8-9a79-e3642b719c60.mp4
 
