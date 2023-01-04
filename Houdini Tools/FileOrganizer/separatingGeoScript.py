@@ -6,16 +6,18 @@ class Separator():
         self.geoSpace = hou.node(space)
         self.ref = hou.node(ref)
         self.newPos = newPos
-        
-        # check if name attribute exists
-        # if not assemble
+        self.name = name
         
         self.pieces = len(self.ref.geometry().points())
+        netbox = self.geoSpace.createNetworkBox()
+        netbox.setColor(hou.Color(0, 0.3, 0.6))
+        netbox.setComment(name + ' objects')
         
         for p in range(self.pieces):
             newObj = self.geoSpace.createNode('geo')
             newObj.setName(name+str(p))
-            newObj.move([p//5*2.5, -p+1%5])
+            newObj.move([(p//5)*2.5, p%5])
+            netbox.addItem(newObj)
             objMerge = newObj.createNode('object_merge')
             objMerge.parm('objpath1').set(self.newPos + '/SEP_CTRL')
             blast = newObj.createNode('blast')
@@ -46,17 +48,19 @@ class SepUi(QtWidgets.QWidget):
             self.path.setText(self.ls[0].path())
             self.dirPath = self.ls[0].path()
             self.newPos = self.selectLocationClicked()
-            if not hou.node(str(self.newPos)+'/SEP_CTRL') in self.ls[0].outputs():
-                if hou.node(str(self.newPos)+'/SEP_CTRL') == None:
-                    self.nullCtrl = hou.node(self.newPos+'/').createNode('null')
+            if not hou.node(str(self.selectLocationClicked())+'/SEP_CTRL') in self.ls[0].outputs():
+                if hou.node(str(self.selectLocationClicked())+'/SEP_CTRL') == None:
+                    self.nullCtrl = hou.node(self.selectLocationClicked()+'/').createNode('null')
                     self.nullCtrl.setName('SEP_CTRL')
                     self.nullCtrl.setInput(0, self.ls[0])
+                elif self.ls[0] == hou.node(self.selectLocationClicked()+'/SEP_CTRL'):
+                    self.nullCtrl = hou.node(str(self.selectLocationClicked())+'/SEP_CTRL')
                 else:
                     pass
                     # disconnect and reconnect SEP_CTRL
             else:
                 hou.ui.displayMessage('SEP_CTRL node already exists')
-                self.nullCtrl = hou.node(str(self.newPos)+'/SEP_CTRL')
+                self.nullCtrl = hou.node(str(self.selectLocationClicked())+'/SEP_CTRL')
             self.nullCtrl.setGenericFlag(hou.nodeFlag.Display, True)
             self.nullCtrl.setGenericFlag(hou.nodeFlag.Render, True)
         else:
@@ -80,3 +84,4 @@ class SepUi(QtWidgets.QWidget):
             
 win = SepUi()
 win.show()
+
